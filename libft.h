@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:18:11 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/20 15:20:34 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:20:29 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -22,6 +22,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-void	*memcpy(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif
