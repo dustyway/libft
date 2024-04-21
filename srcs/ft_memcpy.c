@@ -6,10 +6,10 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 19:41:18 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/20 17:37:54 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:04:39 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

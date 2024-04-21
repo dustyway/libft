@@ -6,10 +6,10 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 19:19:49 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/19 19:39:37 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:03:07 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

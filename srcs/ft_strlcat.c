@@ -6,18 +6,18 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:03:50 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/20 17:36:45 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/21 15:04:14 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-/* size_t strlcat(char *dst, const char *src, */
-/* 			   size_t siz) */
-/* { */
-/* 	size_t dlen = strlen(dst); */
+size_t	strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	dlen;
 
-/* 	if (dlen < siz - 1) */
-/* 		return(dlen + strlcpy(dst + dlen, */
-/* 							  src, siz - dlen)); */
-/* 	else */
-/* 		return(dlen + strlen(src)); */
-/* } */
+	dlen = ft_strlen(dst);
+	if (dlen < size - 1)
+		return (dlen + ft_strlcpy(dst + dlen, src, size - dlen));
+	else
+		return (dlen + ft_strlen(src));
+}

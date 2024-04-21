@@ -6,10 +6,10 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:46:22 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/19 19:03:16 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:05:41 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

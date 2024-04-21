@@ -6,10 +6,10 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:47:52 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/19 19:14:34 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:04:53 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
