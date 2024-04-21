@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 19:41:18 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/21 18:38:03 by pschneid         ###   ########.fr       */
+/*   Created: 2024/04/21 16:24:35 by pschneid          #+#    #+#             */
+/*   Updated: 2024/04/21 18:36:06 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char		*d;
-	const char	*s = src;
+	const unsigned char	uc = c;
+	const unsigned char	*su = s;
 
-	d = dest;
-	while (n)
+	while (n > 0)
 	{
-		*d++ = *s++;
+		if (*su == uc)
+			return ((void *)su);
+		su++;
 		n--;
 	}
-	return (dest);
+	return (NULL);
 }
