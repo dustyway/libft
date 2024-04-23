@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 17:03:50 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/23 15:03:52 by pschneid         ###   ########.fr       */
+/*   Created: 2024/04/23 15:09:11 by pschneid          #+#    #+#             */
+/*   Updated: 2024/04/23 15:16:04 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	dlen;
+	const size_t	n = nmemb * size;
+	char			*p;
 
-	dlen = ft_strlen(dst);
-	if (dlen < size - 1)
-		return (dlen + ft_strlcpy(dst + dlen, src, size - dlen));
-	else
-		return (dlen + ft_strlen(src));
+	p = malloc(n);
+	if (p)
+		ft_memset(p, '\0', n);
+	return (p);
 }
