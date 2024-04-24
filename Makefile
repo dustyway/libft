@@ -6,14 +6,17 @@
 #    By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 21:20:23 by pschneid          #+#    #+#              #
-#    Updated: 2024/04/24 12:47:23 by pschneid         ###   ########.fr        #
+#    Updated: 2024/04/24 17:57:29 by pschneid         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
-CFILES_DIR = srcs
-HEADERS	= .
+SRC_DIR = src
+INCLUDE_DIR	= include
+OBJ_DIR = obj
+TEST_DIR = tests
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(HEADERS)
+OFLAG ?= -O0
+CFLAGS = $(OFLAG) -I$(INCLUDE_DIR) -Wall -Wextra -Werror -g
 NAME = libft.a
 AR = ar rcs
 
@@ -25,18 +28,23 @@ CFILENAMES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c 
 
-BONUS_CFILENAMES = ft_lstnew.c
+BONUS_CFILENAMES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c 
 
-CFILES = $(addprefix $(CFILES_DIR)/,$(CFILENAMES))
+CFILES = $(addprefix $(SRC_DIR)/,$(CFILENAMES))
 OBJECTS = ${CFILES:.c=.o}
 
-BONUS_CFILES = $(addprefix $(CFILES_DIR)/,$(BONUS_CFILENAMES))
+BONUS_CFILES = $(addprefix $(SRC_DIR)/,$(BONUS_CFILENAMES))
 BONUS_OBJECTS = ${BONUS_CFILES:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
+
+test: all
+	@echo "Testing"
+	@$(MAKE) -C $(TEST_DIR) run
 
 clean:
 	-rm -f $(OBJECTS) $(BONUS_OBJECTS)
