@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:18:11 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/24 17:56:48 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:58:34 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -43,7 +43,7 @@ char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
 int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);
-char				*ft_strdup(char *src);
+char				*ft_strdup(const char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);

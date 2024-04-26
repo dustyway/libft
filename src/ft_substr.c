@@ -6,13 +6,13 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:38:18 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/24 19:00:12 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:32:26 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
 
-static int	min(int a, int b)
+static size_t	min(size_t a, size_t b)
 {
 	if (a < b)
 		return (a);
@@ -21,14 +21,18 @@ static int	min(int a, int b)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	slen;
 	size_t	substrlen;
 	char	*substr;
 
-	substrlen = min(ft_strlen(s) - start, len);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		substrlen = 0;
+	else
+		substrlen = min(slen - start, len);
 	substr = malloc(sizeof(char) * (substrlen + 1));
-	if (substr)
-	{
-		(void)len;
-	}
+	if (!substr)
+		return (NULL);
+	ft_strlcpy(substr, s + start, substrlen + 1);
 	return (substr);
 }
