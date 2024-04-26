@@ -6,64 +6,36 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 17:03:50 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/23 16:58:31 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:00:59 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
-{
-	const char	*odst = dst;
-	const char	*osrc = src;
-	size_t		n;
-	size_t		dlen;
+/* If strlcat() traverses size characters without finding a NUL, the length of 
+   the string is considered to be size and the destination string will not be 
+   NUL-terminated (since there was no space for the NUL).
+   This keeps strlcat() from running off the end of a string. In practice this
+   should not happen (as it means that either size is incorrect or that dst is 
+   not a proper ''C'' string). The check exists to prevent potential security 
+   problems in incorrect code. */
 
-	n = dsize;
-	/* Find the end of dst and adjust bytes left but don't go past end. */
-	while (n-- != 0 && *dst != '\0')
-		dst++;
-	dlen = dst - odst;
-	n = dsize - dlen;
-	if (n-- == 0)
-		return (dlen + ft_strlen(src));
-	while (*src != '\0')
-	{
-		if (n != 0)
-		{
-			*dst++ = *src;
-			n--;
-		}
-		src++;
-	}
-	*dst = '\0';
-	return (dlen + (src - osrc)); /* count does not include NUL */
+static size_t	_strllen(const char *s, size_t size)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] && size--)
+		len++;
+	return (len);
 }
 
-/* size_t	ft_strlcat(char *dst, const char *src, size_t size) */
-/* { */
-/* 	size_t	dlen; */
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	dlen;
 
-/* 	dlen = ft_strlen(dst); */
-/* 	if (dlen < size - 1) */
-/* 		return (dlen + ft_strlcpy(dst + dlen, src, size - dlen)); */
-/* 	else */
-/* 		return (dlen + ft_strlen(src)); */
-/* } */
-
-/* size_t	ft_strlcat(char *dst, const char *src, size_t dstsize) */
-/* { */
-/* 	size_t	src_len; */
-/* 	size_t	cur; */
-
-/* 	src_len = ft_strlen(dst); */
-/* 	cur = 0; */
-/* 	if (dstsize <= src_len) */
-/* 		return (ft_strlen(src) + dstsize); */
-/* 	while (src[cur] && (src_len + cur) < (dstsize - 1)) */
-/* 	{ */
-/* 		dst[src_len + cur] = src[cur]; */
-/* 		cur++; */
-/* 	} */
-/* 	dst[src_len + cur] = 0; */
-/* 	return (ft_strlen(src) + src_len); */
-/* } */
+	dlen = _strllen(dst, size);
+	if (dlen <= size)
+		return (dlen + ft_strlcpy(dst + dlen, src, size - dlen));
+	else
+		return (dlen + ft_strlen(src));
+}

@@ -6,13 +6,12 @@
 #    By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 21:20:23 by pschneid          #+#    #+#              #
-#    Updated: 2024/04/24 17:57:29 by pschneid         ###   ########.fr        #
+#    Updated: 2024/04/25 14:04:12 by pschneid         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 SRC_DIR = src
-INCLUDE_DIR	= include
+INCLUDE_DIR	= .
 OBJ_DIR = obj
-TEST_DIR = tests
 
 CC = cc
 OFLAG ?= -O0
@@ -42,10 +41,6 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
 
-test: all
-	@echo "Testing"
-	@$(MAKE) -C $(TEST_DIR) run
-
 clean:
 	-rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
@@ -54,7 +49,7 @@ fclean:	clean
 
 re:	fclean all
 
-bonus: $(OBJECTS) $(BONUS_OBJECTS)
+bonus: all $(OBJECTS) $(BONUS_OBJECTS)
 	$(AR) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
 
 .PHONY: all clean fclean re bonus
