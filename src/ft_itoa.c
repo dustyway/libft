@@ -6,13 +6,13 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:28:09 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/27 14:34:35 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:01:46 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
 
-static int	rep_length(int num)
+static int	rep_len(int num)
 {
 	int	len;
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	unsigned int	pnbr;
 	char			*res;
 
-	pos = rep_length(n);
+	pos = rep_len(n);
 	res = malloc(sizeof(char) * pos + 1);
 	if (!res)
 		return (NULL);
