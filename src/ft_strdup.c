@@ -6,11 +6,11 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:17:11 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/26 18:26:37 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:19:25 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strdup(const char *src)
 {

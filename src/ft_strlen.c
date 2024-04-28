@@ -6,17 +6,17 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:46:22 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/21 14:05:41 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:35:22 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	char	*sorig;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	sorig = (char *)s;
+	while (*s)
+		s++;
+	return (s - sorig);
 }
