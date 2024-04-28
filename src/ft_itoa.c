@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:28:09 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/27 14:33:25 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:34:35 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,9 +23,7 @@ static int	rep_length(int num)
 		len += 2;
 	}
 	else if (num == 0)
-	{
 		len = 1;
-	}
 	while (num)
 	{
 		num /= 10;
