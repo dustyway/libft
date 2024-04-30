@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:16:30 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:20:41 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -71,6 +71,7 @@ char	**ft_split(char const *s, char c)
 		next_word(s, c, &start, &end);
 		i++;
 	}
+	tab[i]=NULL;
 	return (tab);
 }
 
@@ -80,7 +81,8 @@ char	**ft_split(char const *s, char c)
 /* 	int i; */
 /* 	i =0; */
 /* 	/\* tab = ft_split("hello!zzzzzz", 'z'); *\/ */
-/* 	tab = ft_split("a b c", ' '); */
+/* 	/\* tab = ft_split("a b c", ' '); *\/ */
+/* 	tab = ft_split("hello!", ' ');	 */
 /* 	while (tab[i]) */
 /* 	{ */
 /* 		printf("%s\n", tab[i]); */
