@@ -6,11 +6,11 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:09:29 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:16:30 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
+/* #include <stdio.h> */
 #include <stdlib.h>
 
 int	count_words(const char *str, char c)
@@ -51,25 +51,26 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	int		end;
 	char	**tab;
-	char	**tab_iter;
+	int i;
 
+	i=0;
 	nwords = count_words(s, c);
+	/* printf("nwords: %\n", nwords); */
 	tab = (char **)malloc(sizeof(char *) * (nwords + 1));
 	if (!tab)
 		return (NULL);
-	tab_iter = tab;
+
 	end = 0;
 	next_word(s, c, &start, &end);
 	while (start != end)
 	{
-		*tab_iter = malloc(sizeof(char) * ((end - start) + 1));
-		if (!*tab_iter)
+		tab[i] = malloc(sizeof(char) * ((end - start) + 1));
+		if (!tab[i])
 			return (NULL);
-		ft_strlcpy(*tab_iter, s + start, (end - start) + 1);
+		ft_strlcpy(tab[i], s + start, (end - start) + 1);
 		next_word(s, c, &start, &end);
-		tab_iter++;
+		i++;
 	}
-	*tab_iter = NULL;
 	return (tab);
 }
 
@@ -77,10 +78,9 @@ char	**ft_split(char const *s, char c)
 /* { */
 /* 	char **tab; */
 /* 	int i; */
-
-/* 	i=0; */
-/* 	tab = ft_split("hello!zzzzzz", 'z'); */
-/* 	/\* tab = ft_split("a b c", ' ');		*\/ */
+/* 	i =0; */
+/* 	/\* tab = ft_split("hello!zzzzzz", 'z'); *\/ */
+/* 	tab = ft_split("a b c", ' '); */
 /* 	while (tab[i]) */
 /* 	{ */
 /* 		printf("%s\n", tab[i]); */
