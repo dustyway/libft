@@ -6,13 +6,23 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 15:41:46 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/28 15:42:57 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:10:44 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	unsigned int	num;
+
+	if (n < 0)
+	{
+		num = -1 * n;
+		ft_putchar_fd('-', fd);
+	}
+	else
+		num = n;
+	while (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	ft_putchar_fd((num % 10) + '0', fd);
 }
