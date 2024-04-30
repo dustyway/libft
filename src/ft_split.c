@@ -6,30 +6,23 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:33:20 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:40:49 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/* #include <stdio.h> */
 #include <stdlib.h>
 
-#include "libft.h"
-#include <stdlib.h>
-
-
-#include "libft.h"
-
-static size_t	ft_countword(char const *s, char c)
+static size_t	_count_words(char const *s, char c)
 {
 	size_t	count;
 
 	if (!*s)
 		return (0);
 	count = 0;
+	while (*s == c)
+		s++;
 	while (*s)
 	{
-		while (*s == c)
-			s++;
 		if (*s)
 			count++;
 		while (*s != c && *s)
@@ -65,29 +58,6 @@ char	**ft_split(char const *s, char c)
 	lst[i] = NULL;
 	return (lst);
 }
-
-
-/* int	count_words(const char *str, char c) */
-/* { */
-/* 	int	nwords; */
-/* 	int	i; */
-
-/* 	if (!str || *str == '\0') */
-/* 		return (0); */
-/* 	if (str[1] == '\0') */
-/* 		return (str[0] != c); */
-/* 	i = 1; */
-/* 	nwords = 0; */
-/* 	while (str[i] != 0) */
-/* 	{ */
-/* 		if (str[i - 1] == c && str[i] != c) */
-/* 			nwords++; */
-/* 		i++; */
-/* 	} */
-/* 	if (str[i - 1] != c) */
-/* 		nwords++; */
-/* 	return (nwords); */
-/* } */
 
 /* void	next_word(const char *str, char c, int *start, int *end) */
 /* { */
@@ -136,7 +106,7 @@ char	**ft_split(char const *s, char c)
 /* /\* 	i =0; *\/ */
 /* /\* 	/\\* tab = ft_split("hello!zzzzzz", 'z'); *\\/ *\/ */
 /* /\* 	/\\* tab = ft_split("a b c", ' '); *\\/ *\/ */
-/* /\* 	tab = ft_split("hello!", ' ');	 *\/ */
+/* /\* 	tab = ft_split("hello!", ' ');		*\/ */
 /* /\* 	while (tab[i]) *\/ */
 /* /\* 	{ *\/ */
 /* /\* 		printf("%s\n", tab[i]); *\/ */
