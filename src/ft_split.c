@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:40:49 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:41:58 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 	size_t	word_len;
 	int		i;
 
-	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	lst = (char **)malloc((_count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !lst)
 		return (0);
 	i = 0;
