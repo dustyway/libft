@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:52:05 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:55:24 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -51,8 +51,8 @@ char	**ft_split(char const *s, char c)
 				wlen = ft_strlen(s);
 			else
 				wlen = ft_strchr(s, c) - s;
-			tab[i++] = ft_substr(s, 0, word_len);
-			s += word_len;
+			tab[i++] = ft_substr(s, 0, wlen);
+			s += wlen;
 		}
 	}
 	tab[i] = NULL;
