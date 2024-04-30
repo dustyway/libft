@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 19:41:24 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 13:34:36 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:37:22 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -28,6 +28,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		s += n;
 		while (n--)
 			*--d = *--s;
-		return (dest);
 	}
+	return (dest);	
 }
