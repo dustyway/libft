@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:38:18 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 16:23:51 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:25:57 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,7 +50,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-int	main(void)
-{
-	printf("%s\n", ft_substr("", 1, 1));
-}
+/* int	main(void) */
+/* { */
+/* 	printf("%s\n", ft_substr("", 1, 1)); */
+/* } */
