@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 11:39:44 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:40:29 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 		if (!*tab_iter)
 			return (NULL);
 		ft_strlcpy(*tab_iter, s + start, (end - start) + 1);
-		next_word(s, charset, &start, &end);
+		next_word(s, c, &start, &end);
 		tab_iter++;
 	}
 	*tab_iter = NULL;
