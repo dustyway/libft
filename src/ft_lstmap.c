@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:41:22 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/26 20:34:12 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:29:08 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	newl = ft_lstnew(f(lst->content));
 	newl->next = ft_lstmap(lst->next, f, del);
-	ft_lstdelone(lst, del);
 	return (newl);
 }
