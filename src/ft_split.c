@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:05:08 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 17:41:58 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:43:42 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,10 +19,10 @@ static size_t	_count_words(char const *s, char c)
 	if (!*s)
 		return (0);
 	count = 0;
-	while (*s == c)
-		s++;
 	while (*s)
 	{
+		while (*s == c)
+			s++;
 		if (*s)
 			count++;
 		while (*s != c && *s)
