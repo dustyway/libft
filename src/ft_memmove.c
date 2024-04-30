@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 19:41:24 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 13:37:22 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:45:36 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s = src;
 
 	d = dest;
-	if (!d || !s)
-		return (NULL);
 	if (d < s)
 		while (n--)
 			*d++ = *s++;

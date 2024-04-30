@@ -6,7 +6,7 @@
 #    By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 21:20:23 by pschneid          #+#    #+#              #
-#    Updated: 2024/04/28 15:26:42 by pschneid         ###   ########.fr        #
+#    Updated: 2024/04/30 11:54:59 by pschneid         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 SRC_DIR = src
@@ -49,7 +49,7 @@ fclean:	clean
 
 re:	fclean all
 
-bonus: all $(OBJECTS) $(BONUS_OBJECTS)
+bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	$(AR) $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
 
 .PHONY: all clean fclean re bonus
