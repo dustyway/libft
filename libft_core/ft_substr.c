@@ -6,7 +6,7 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:38:18 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/30 16:25:57 by pschneid         ###   ########.fr       */
+/*   Updated: 2024/12/06 22:02:07 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,16 +19,6 @@ static size_t	min(size_t a, size_t b)
 		return (a);
 	return (b);
 }
-
-/* static char *_empty_string() */
-/* { */
-/* 	char *s; */
-/* 	s = malloc(sizeof(char)); */
-/* 	if (!s) */
-/* 		return (NULL); */
-/* 	s[0] = '\0'; */
-/* 	return (s); */
-/* } */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -49,8 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ft_strlcpy(substr, s + start, substrlen + 1);
 	return (substr);
 }
-
-/* int	main(void) */
-/* { */
-/* 	printf("%s\n", ft_substr("", 1, 1)); */
-/* } */
