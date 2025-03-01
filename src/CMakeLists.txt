@@ -2,7 +2,7 @@ project(libft VERSION 0.0.2 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 90)
 
-set(LIBRARY_NAME ft)
+
 
 set(LIBFT_DIR libft_core)
 set(FTPRINTF_DIR ft_printf)
