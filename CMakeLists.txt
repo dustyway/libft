@@ -13,9 +13,4 @@ if(ENABLE_TESTING)
     add_subdirectory(tests)
 endif()
 
-
 include(Docs)
-
-#if(ENABLE_TESTING)
-#    add_subdirectory(tests_backup)
-#endif()
