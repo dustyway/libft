@@ -12,13 +12,10 @@
 #include "libft_addendum.h"
 #include "stack.h"
 
-t_stack	*init_stack(void (*del)(void *))
+void init_stack(t_stack	**s, void (*del)(void *))
 {
-	t_stack	*s;
-
-	s = safe_malloc(sizeof(t_stack));
-	s->values = NULL;
-	s->size = 0;
-	s->del = del;
-	return (s);
+	*s = safe_malloc(sizeof(t_stack));
+	(*s)->values = NULL;
+	(*s)->size = 0;
+	(*s)->del = del;
 }

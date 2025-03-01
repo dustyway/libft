@@ -21,7 +21,7 @@ typedef struct s_queue
 }			t_queue;
 
 t_queue		*init_queue(void (*del)(void *));
-int			is_empty(t_queue *queue);
+int			queue_is_empty(t_queue *queue);
 void		enqueue(t_queue *queue, void *value);
 void		*queue_peek(const t_queue *q);
 void		*queue_peek_n(t_queue *q, size_t n);

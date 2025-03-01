@@ -13,15 +13,9 @@
 #ifndef FT_MATH_H
 # define FT_MATH_H
 
-// # ifdef __cplusplus
-// extern "C"
-// {
-// # endif
-
-	unsigned int factorial(unsigned int n);
-
-// # ifdef __cplusplus
-// }
-// # endif
+float		abs_f(float x);
+int		abs_i(int x);
+unsigned int factorial(unsigned int n);
+int			sign_i(int x);
 
 #endif // FT_MATH_H

@@ -20,11 +20,12 @@ typedef struct s_stack
 	void	(*del)(void *);
 }			t_stack;
 
-t_stack		*init_stack(void (*del)(void *));
+void init_stack(t_stack	**s, void (*del)(void *));
 size_t		stack_size(const t_stack *stack);
 void		push_stack(t_stack *stack, void *value);
 void		*pop_stack(t_stack *stack);
 void		*peek_stack(t_stack *stack);
-void		clear_stack(t_stack *stack);
+void		clear_stack(t_stack **stack);
+int         stack_is_empty(t_stack *stack);
 
 #endif // STACK_H

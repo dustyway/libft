@@ -12,8 +12,9 @@
 #include "stack.h"
 #include <stdlib.h>
 
-void	clear_stack(t_stack *s)
+void	clear_stack(t_stack **s)
 {
-	ft_lstclear(&s->values, s->del);
-	free(s);
+	ft_lstclear(&((*s)->values), (*s)->del);
+	free(*s);
+	*s = NULL;
 }

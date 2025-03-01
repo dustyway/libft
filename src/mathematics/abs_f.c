@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_empty.c                                         :+:      :+:    :+:   */
+/*   abs.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 12:56:53 by pschneid          #+#    #+#             */
-/*   Updated: 2025/01/25 12:56:54 by pschneid         ###   ########.fr       */
+/*   Created: 2024/12/07 19:08:13 by pschneid          #+#    #+#             */
+/*   Updated: 2024/12/14 17:19:23 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "queue.h"
-
-int	is_empty(t_queue *queue)
+float	abs_f(float x)
 {
-	return (queue->front == NULL);
+	if (x < 0)
+		return (-x);
+	return (x);
 }

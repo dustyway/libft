@@ -5,5 +5,6 @@ set(SRC_ST
         pop_stack.c
         push_stack.c
         stack_size.c
+        stack_is_empty.c
         CACHE INTERNAL "Sources for stack."
 )
