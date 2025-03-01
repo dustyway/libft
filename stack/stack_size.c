@@ -11,7 +11,12 @@
 /* ************************************************************************** */
 #include "stack.h"
 
-int	stack_size(t_stack *stack)
+/**
+ *
+ * @param stack
+ * @return size of stack
+ */
+size_t	stack_size(const t_stack *stack)
 {
 	return (stack->size);
 }

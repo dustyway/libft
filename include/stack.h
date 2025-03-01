@@ -21,7 +21,7 @@ typedef struct s_stack
 }			t_stack;
 
 t_stack		*init_stack(void (*del)(void *));
-int			stack_size(t_stack *stack);
+size_t		stack_size(const t_stack *stack);
 void		push_stack(t_stack *stack, void *value);
 void		*pop_stack(t_stack *stack);
 void		*peek_stack(t_stack *stack);
