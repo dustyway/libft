@@ -8,7 +8,7 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
 add_subdirectory(src)
 add_subdirectory(include)
-
+add_subdirectory(main)
 if(ENABLE_TESTING)
     add_subdirectory(tests)
 endif()

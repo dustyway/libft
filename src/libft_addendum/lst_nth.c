@@ -11,11 +11,18 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+
+/**
+ *
+ * @param lst a list
+ * @param n an index
+ * @return returns the nth element of the list from the front starting from 0
+ */
 void	*lst_nth(t_list *lst, size_t n)
 {
-	if (!lst || n < 1)
+	if (!lst || n < 0)
 		return (NULL);
-	while (n > 1)
+	while (n > 0)
 	{
 		lst = lst->next;
 		if (!lst)

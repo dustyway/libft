@@ -4,6 +4,7 @@ set(TEST_SOURCES
         main.cpp
         libft_core/ft_atoi_test.cpp
         libft_addendum/absf_test.cpp
+        libft_addendum/lst_nth_test.cpp
         mathematics/factorial_test.cpp)
 
 add_executable(tests ${TEST_SOURCES})
