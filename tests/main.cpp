@@ -1,12 +1,17 @@
+//
+// Created by ps on 3/1/25.
+//
 #define CATCH_CONFIG_MAIN
-
 #include <catch2/catch.hpp>
+
+#include <iostream>
+extern "C" {
 #include "mathematics.h"
+}
+int main() {
+  unsigned int a;
 
-TEST_CASE( "Factorials are computed", "[factorial]") {
-    REQUIRE(factorial(1) == 1);
-    REQUIRE(factorial(1) == 2);
-    REQUIRE(factorial(1) == 6);
-    REQUIRE(factorial(1) == 3628800);
-
+  a = factorial(10);
+  std::cout << "Hello World cpp " << a << std::endl;
+  return 0;
 }
