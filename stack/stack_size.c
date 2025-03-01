@@ -12,7 +12,7 @@
 #include "stack.h"
 
 /**
- *
+ * @brief returns the size of the stack
  * @param stack
  * @return size of stack
  */

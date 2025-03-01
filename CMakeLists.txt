@@ -40,6 +40,8 @@ set(SRC_FILES
         ${SRC_ST}
 )
 
-add_library(${LIBRARY_NAME} STATIC ${SRC_FILES})
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+include(Docs)
 
+add_library(${LIBRARY_NAME} STATIC ${SRC_FILES})
 add_subdirectory(include)
