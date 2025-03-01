@@ -1,4 +1,4 @@
-project(libft-tests VERSION 0.0.2 LANGUAGES CXX)
+project(libft-tests VERSION 0.0.2 LANGUAGES C CXX)
 
 include(FetchContent)
 
@@ -12,7 +12,7 @@ list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 
 
 set(TEST_MAIN "unit_tests")
-set(TEST_SOURCES main.c)
+set(TEST_SOURCES main.cpp)
 set(TEST_INCLUDES "./")
 add_executable(${TEST_MAIN} ${TEST_SOURCES})
 target_include_directories(${TEST_MAIN} PUBLIC ${TEST_INCLUDES})
