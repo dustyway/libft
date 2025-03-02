@@ -6,9 +6,10 @@
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 12:56:50 by pschneid          #+#    #+#             */
-/*   Updated: 2025/01/25 12:56:51 by pschneid         ###   ########.fr       */
+/*   Updated: 2025/03/02 09:26:33 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft_addendum.h"
 #include "stack.h"
 
@@ -18,7 +19,7 @@
  * @param s pointer to pointer to t_stack
  * @param del function to clean up stack elements (for example free)
  */
-void stack_init(t_stack	**s, void (*del)(void *))
+void	stack_init(t_stack **s, void (*del)(void *))
 {
 	*s = safe_malloc(sizeof(t_stack));
 	(*s)->values = NULL;

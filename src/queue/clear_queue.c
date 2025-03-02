@@ -16,5 +16,5 @@ void	clear_queue(t_queue **q)
 {
 	ft_lstclear(&((*q)->front), (*q)->del);
 	free(*q);
-	*q=NULL;
+	*q = NULL;
 }

@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   factorial.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/02 09:25:01 by pschneid          #+#    #+#             */
+/*   Updated: 2025/03/02 09:25:04 by pschneid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-unsigned int factorial(unsigned int n)
+unsigned int	factorial(unsigned int n)
 {
-  if (n <= 1)
-    return 1;
-  else
-    return n * factorial(n - 1);
+	if (n <= 1)
+		return (1);
+	else
+		return (n * factorial(n - 1));
 }

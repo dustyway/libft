@@ -19,7 +19,7 @@
  * @param del function to clean up queue elements (for example free)
  */
 
-void init_queue(t_queue **q, void (*del)(void *))
+void	init_queue(t_queue **q, void (*del)(void *))
 {
 	*q = safe_malloc(sizeof(t_queue));
 	(*q)->front = NULL;

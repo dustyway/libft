@@ -1,6 +1,14 @@
-//
-// Created by pschneid on 3/2/25.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   queue_size.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/02 09:34:05 by pschneid          #+#    #+#             */
+/*   Updated: 2025/03/02 09:34:13 by pschneid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "queue.h"
 
 /**
@@ -8,8 +16,7 @@
  * @param stack
  * @return size of stack
  */
-
 size_t	queue_size(const t_queue *q)
 {
-    return (q->size);
+	return (q->size);
 }

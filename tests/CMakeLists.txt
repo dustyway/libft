@@ -11,6 +11,6 @@ set(TEST_SOURCES
         queue/queue_tests.cpp
 )
 
-add_executable(tests ${TEST_SOURCES})
-target_include_directories(tests PRIVATE ${CMAKE_CURRENT_LIST_DIR})
-target_link_libraries(tests PRIVATE ft)
+add_executable(libft-tests ${TEST_SOURCES})
+target_include_directories(libft-tests PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(libft-tests PRIVATE ft)
