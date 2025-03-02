@@ -1,5 +1,4 @@
-#include <catch2/catch.hpp>
-
+#include <catch2/catch_all.hpp>
 extern "C" {
 #include "libft_addendum.h"
 }

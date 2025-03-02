@@ -1,7 +1,6 @@
 project(libft-tests VERSION 0.0.2 LANGUAGES CXX)
 
 set(TEST_SOURCES
-        main.cpp
         libft_core/ft_atoi_test.cpp
         mathematics/abs_f_test.cpp
         mathematics/abs_i_test.cpp
@@ -11,6 +10,16 @@ set(TEST_SOURCES
         queue/queue_tests.cpp
 )
 
+Include(FetchContent)
+
+FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG        v3.8.0 # or a later release
+)
+
+FetchContent_MakeAvailable(Catch2)
+
 add_executable(libft-tests ${TEST_SOURCES})
 target_include_directories(libft-tests PRIVATE ${CMAKE_CURRENT_LIST_DIR})
-target_link_libraries(libft-tests PRIVATE ft)
+target_link_libraries(libft-tests PRIVATE ft Catch2::Catch2WithMain)

@@ -1,7 +1,4 @@
-//
-// Created by pschneid on 3/1/25.
-//
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 extern "C" {
 #include "mathematics.h"
