@@ -12,8 +12,9 @@
 #include "queue.h"
 #include <stdlib.h>
 
-void	clear_queue(t_queue *queue)
+void	clear_queue(t_queue **q)
 {
-	ft_lstclear(&(queue->front), queue->del);
-	free(queue);
+	ft_lstclear(&((*q)->front), (*q)->del);
+	free(*q);
+	*q=NULL;
 }

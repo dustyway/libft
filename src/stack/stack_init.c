@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pop_stack.c                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 15:37:19 by pschneid          #+#    #+#             */
-/*   Updated: 2025/02/28 16:12:45 by pschneid         ###   ########.fr       */
+/*   Created: 2025/01/25 12:56:50 by pschneid          #+#    #+#             */
+/*   Updated: 2025/01/25 12:56:51 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stack.h>
-#include <stdlib.h>
+#include "libft_addendum.h"
+#include "stack.h"
 
-void	*pop_stack(t_stack *s)
+/**
+ * @brief initializes a stack
+ *
+ * @param s pointer to pointer to t_stack
+ * @param del function to clean up stack elements (for example free)
+ */
+void stack_init(t_stack	**s, void (*del)(void *))
 {
-	t_list	*head;
-	void	*content;
-
-	if (!s || !s->values)
-		return (NULL);
-	head = s->values;
-	content = head->content;
-	s->values = s->values->next;
-	ft_lstdelone(head, NULL);
-	s->size--;
-	return (content);
+	*s = safe_malloc(sizeof(t_stack));
+	(*s)->values = NULL;
+	(*s)->size = 0;
+	(*s)->del = del;
 }

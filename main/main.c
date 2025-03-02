@@ -8,7 +8,7 @@
 
 int main() {
   t_stack *s;
-  init_stack(&s,free);
+  stack_init(&s,free);
 
 
 }

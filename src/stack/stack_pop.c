@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maxf.c                                             :+:      :+:    :+:   */
+/*   pop_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 17:11:20 by pschneid          #+#    #+#             */
-/*   Updated: 2024/12/10 17:15:55 by pschneid         ###   ########.fr       */
+/*   Created: 2025/02/26 15:37:19 by pschneid          #+#    #+#             */
+/*   Updated: 2025/02/28 16:12:45 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-float	maxf(float x, float y)
+#include <stack.h>
+#include <stdlib.h>
+
+void	*stack_pop(t_stack *s)
 {
-	if (x > y)
-		return (x);
-	return (y);
+	t_list	*head;
+	void	*content;
+
+	if (!s || !s->values)
+		return (NULL);
+	head = s->values;
+	content = head->content;
+	s->values = s->values->next;
+	ft_lstdelone(head, NULL);
+	s->size--;
+	return (content);
 }

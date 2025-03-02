@@ -5,5 +5,7 @@ set(SRC_QU
         queue_is_empty.c
         queue_peek.c
         queue_peek_n.c
+        queue_size.c
+        clear_queue.c
         CACHE INTERNAL "Sources for queue."
 )

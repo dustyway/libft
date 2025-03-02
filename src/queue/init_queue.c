@@ -12,13 +12,18 @@
 #include "libft_addendum.h"
 #include "queue.h"
 
-t_queue	*init_queue(void (*del)(void *))
-{
-	t_queue	*q;
+/**
+ * @brief initializes a queue
+ *
+ * @param q pointer to pointer to t_queue
+ * @param del function to clean up queue elements (for example free)
+ */
 
-	q = safe_malloc(sizeof(t_queue));
-	q->front = NULL;
-	q->back = NULL;
-	q->del = del;
-	return (q);
+void init_queue(t_queue **q, void (*del)(void *))
+{
+	*q = safe_malloc(sizeof(t_queue));
+	(*q)->front = NULL;
+	(*q)->back = NULL;
+	(*q)->size = 0;
+	(*q)->del = del;
 }

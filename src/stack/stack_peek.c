@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <stack.h>
 
-void	*peek_stack(t_stack *s)
+void	*stack_peek(t_stack *s)
 {
 	if (!s || !s->values)
 		return (NULL);

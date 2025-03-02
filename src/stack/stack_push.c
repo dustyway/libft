@@ -13,7 +13,7 @@
 #include "libft_addendum.h"
 #include "stack.h"
 
-void	push_stack(t_stack *stack, void *value)
+void	stack_push(t_stack *stack, void *value)
 {
 	t_list	*new_node;
 

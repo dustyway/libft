@@ -1,9 +1,9 @@
 set(SRC_ST
         clear_stack.c
-        init_stack.c
-        peek_stack.c
-        pop_stack.c
-        push_stack.c
+        stack_init.c
+        stack_peek.c
+        stack_pop.c
+        stack_push.c
         stack_size.c
         stack_is_empty.c
         CACHE INTERNAL "Sources for stack."

@@ -8,6 +8,7 @@ set(TEST_SOURCES
         libft_addendum/lst_nth_test.cpp
         mathematics/factorial_test.cpp
         stack/stack_tests.cpp
+        queue/queue_tests.cpp
 )
 
 add_executable(tests ${TEST_SOURCES})

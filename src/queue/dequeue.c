@@ -25,5 +25,6 @@ void	*dequeue(t_queue *queue)
 	ft_lstdelone(head, NULL);
 	if (queue->front == NULL)
 		queue->back = NULL;
+	queue->size--;
 	return (value);
 }
