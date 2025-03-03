@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_queue.c                                       :+:      :+:    :+:   */
+/*   queue_clear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 12:56:50 by pschneid          #+#    #+#             */
-/*   Updated: 2025/01/25 12:56:51 by pschneid         ###   ########.fr       */
+/*   Created: 2025/01/25 12:56:25 by pschneid          #+#    #+#             */
+/*   Updated: 2025/01/25 12:56:27 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft_addendum.h"
 #include "queue.h"
+#include <stdlib.h>
 
-/**
- * @brief initializes a queue
- *
- * @param q pointer to pointer to t_queue
- * @param del function to clean up queue elements (for example free)
- */
-
-void	init_queue(t_queue **q, void (*del)(void *))
+void	queue_clear(t_queue **q)
 {
-	*q = safe_malloc(sizeof(t_queue));
-	(*q)->front = NULL;
-	(*q)->back = NULL;
-	(*q)->size = 0;
-	(*q)->del = del;
+	ft_lstclear(&((*q)->front), (*q)->del);
+	free(*q);
+	*q = NULL;
 }
