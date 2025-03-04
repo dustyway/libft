@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mathematics.h                                      :+:      :+:    :+:   */
+/*   dequeue_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 19:02:56 by pschneid          #+#    #+#             */
-/*   Updated: 2025/03/04 13:56:17 by pschneid         ###   ########.fr       */
+/*   Created: 2025/03/04 13:48:19 by pschneid          #+#    #+#             */
+/*   Updated: 2025/03/04 13:49:23 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "queue.h"
+#include <libft.h>
 
-#ifndef MATHEMATICS_H
-#define MATHEMATICS_H
+void	dequeue_free(t_queue *queue)
+{
+	void	*value;
+	t_list	*head;
 
-float			abs_f(float x);
-int				abs_i(int x);
-unsigned int	factorial(unsigned int n);
-int				sign_i(int x);
-
-#endif
-
-# define FT_MATH_H
+	if (queue->front == NULL)
+		return (NULL);
+	head = queue->front;
+	value = head->content;
+	queue->front = queue->front->next;
+	ft_lstdelone(head, queue->del);
+	if (queue->front == NULL)
+		queue->back = NULL;
+	queue->size--;
+	return ;
+}
