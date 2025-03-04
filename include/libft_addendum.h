@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdint.h>
 
+
 uint32_t	atohex(const char *nptr);
 size_t		count_words(char const *s, char c);
 void		error_exit(char *msg);
