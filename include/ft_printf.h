@@ -56,7 +56,7 @@ typedef enum e_error
 	INVALID_ARGS_ERROR = -1,
 	PRINT_ERROR = -2,
 	PARSE_ERROR = -3,
-	SPECIFIER_ERROR = -4,
+	SPECIFIER_ERROR = -4
 }						t_error;
 
 int						parse_conversion(t_print_data *pd);
