@@ -19,7 +19,7 @@
  */
 void	*lst_nth(t_list *lst, size_t n)
 {
-	if (!lst || n < 0)
+	if (!lst)
 		return (NULL);
 	while (n > 0)
 	{

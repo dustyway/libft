@@ -19,5 +19,6 @@ TEST_CASE( "return the nth element of a list starting from 0", "[lst_nth]" ) {
     CHECK( lst_nth(l,0) == &c);
     CHECK( lst_nth(l,4) == NULL);
     CHECK( lst_nth(l,-1) == NULL);
+    ft_lstclear(&l,NULL);
 }
 

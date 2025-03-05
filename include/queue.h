@@ -31,4 +31,4 @@ void		dequeue_free(t_queue *queue);
 size_t		queue_size(const t_queue *q);
 void		clear_queue(t_queue **q);
 
-#endif // QUEUE_H
+#endif

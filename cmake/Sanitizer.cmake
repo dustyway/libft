@@ -1,0 +1,22 @@
+function(add_sanitizer_flags)
+    if (NOT ENABLE_SANITIZER_ADDR AND NOT ENABLE_SANITIZE_UNDEF)
+        message(STATUS "Sanitizers deactivated.")
+    endif ()
+
+    if(CMAKE_C_COMPILER_ID MATCHES "Clang" OR CMAKE_C_COMPILER_ID MATCHES "GNU")
+        add_compile_options("-fno-omit-frame-pointer")
+        add_link_options("-fno-omit-frame-pointer")
+
+        if(ENABLE_SANITIZE_ADDR)
+            add_compile_options("-fsanitize=address")
+            add_link_options("-fsanitize=address")
+        endif ()
+
+        if(ENABLE_SANITIZE_UNDEF)
+            add_compile_options("-fsanitize=undefined")
+            add_link_options("-fsanitize=undefined")
+        endif ()
+    else()
+        message(STATUS "Sanitizer not supported in this environment!")
+    endif ()
+endfunction(add_sanitizer_flags)

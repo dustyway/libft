@@ -43,3 +43,6 @@ set(SRC_FILES
 )
 
 add_library(${LIBRARY_NAME} STATIC ${SRC_FILES})
+if(ENABLE_WARNINGS)
+    target_set_warnings(${LIBRARY_NAME} ON OFF)
+endif ()

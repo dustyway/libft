@@ -28,4 +28,4 @@ void		*stack_peek(t_stack *stack);
 void		clear_stack(t_stack **stack);
 int			stack_is_empty(t_stack *stack);
 
-#endif // STACK_H
+#endif
