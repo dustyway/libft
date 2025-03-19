@@ -1,5 +1,6 @@
 set(SRC_QU
         dequeue.c
+        dequeue_nth.c	
         dequeue_free.c
         enqueue.c
         init_queue.c
