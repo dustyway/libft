@@ -17,25 +17,23 @@ void	*dequeue_nth(t_queue *queue, size_t n)
 	void	*value;
 	t_list	*iter;
 	t_list	*prev;
-	int i;
+	int		i;
 
-	if (queue->size < n+1)
+	if (queue->size < n + 1)
 		return (NULL);
 	iter = queue->front;
 	prev = NULL;
-	i = 0;
-	while(i<n)
+	i = -1;
+	while (++i < n)
 	{
-	    prev = iter;
-	    iter = iter->next;
-	    i++;
+		prev = iter;
+		iter = iter->next;
 	}
-
 	value = iter->content;
 	if (prev == NULL)
-	    queue->front = iter->next;
+		queue->front = iter->next;
 	else
-	    prev->next = iter->next;
+		prev->next = iter->next;
 	ft_lstdelone(iter, NULL);
 	if (queue->front == NULL)
 		queue->back = NULL;

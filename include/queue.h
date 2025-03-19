@@ -27,7 +27,7 @@ void		enqueue(t_queue *queue, void *value);
 void		*queue_peek(const t_queue *q);
 void		*queue_peek_n(t_queue *q, size_t n);
 void		*dequeue(t_queue *queue);
-void	*dequeue_nth(t_queue *queue, size_t n);
+void		*dequeue_nth(t_queue *queue, size_t n);
 void		dequeue_free(t_queue *queue);
 size_t		queue_size(const t_queue *q);
 void		clear_queue(t_queue **q);

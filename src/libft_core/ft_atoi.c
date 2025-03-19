@@ -21,7 +21,7 @@ static int	_isspace(int c)
 int	ft_atoi(const char *nptr)
 {
 	unsigned int	n;
-	int	sign;
+	int				sign;
 
 	n = 0;
 	sign = 1;
@@ -38,5 +38,5 @@ int	ft_atoi(const char *nptr)
 	{
 		n = 10 * n + *nptr++ - '0';
 	}
-	return (int) (sign * n);
+	return ((int)(sign * n));
 }
