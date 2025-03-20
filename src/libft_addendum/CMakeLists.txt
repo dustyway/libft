@@ -4,6 +4,7 @@ set(SRC_LIBFT_ADD
         error_exit.c
         lst_del_node.c
         lst_nth.c
+        lst_drop.c
         safe_malloc.c
         safe_malloc2.c
         safe_write.c

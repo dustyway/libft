@@ -26,4 +26,5 @@ void		*safe_malloc2(size_t bytes, t_list **allocs);
 void		safe_write(int fd, const void *buf, size_t count);
 char		*strip_nl(char *s);
 void		*lst_nth(t_list *lst, size_t n);
+t_list		*lst_drop(t_list *lst, size_t n);
 #endif

@@ -11,32 +11,25 @@
 /* ************************************************************************** */
 #include "queue.h"
 #include <libft.h>
+#include <libft_addendum.h>
 
 void	*dequeue_nth(t_queue *queue, size_t n)
 {
 	void	*value;
-	t_list	*iter;
 	t_list	*prev;
-	int		i;
+	t_list	*nth;
 
+	if (n == 0)
+		return (dequeue(queue));
 	if (queue->size < n + 1)
 		return (NULL);
-	iter = queue->front;
-	prev = NULL;
-	i = -1;
-	while (++i < n)
-	{
-		prev = iter;
-		iter = iter->next;
-	}
-	value = iter->content;
-	if (prev == NULL)
-		queue->front = iter->next;
-	else
-		prev->next = iter->next;
-	ft_lstdelone(iter, NULL);
-	if (queue->front == NULL)
-		queue->back = NULL;
+	prev = lst_drop(queue->front, n - 1);
+	nth = prev->next;
+	value = nth->content;
+	prev->next = nth->next;
+	if (nth == queue->back)
+		queue->back = prev;
+	ft_lstdelone(nth, NULL);
 	queue->size--;
 	return (value);
 }
