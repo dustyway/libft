@@ -2,6 +2,7 @@ set(SRC_LIBFT_ADD
         atohex.c
         count_words.c
         error_exit.c
+        free_tab.c
         lst_del_node.c
         lst_nth.c
         lst_drop.c
