@@ -20,7 +20,7 @@ uint32_t	atohex(const char *nptr);
 size_t		count_words(char const *s, char c);
 void error_exit(char *msg);
 void free_tab(char **tab);
-void		lst_del_node(t_list **lst, void *key);
+void	lst_del_node(t_list **lst, void *key, void (*del)(void *));
 float		maxf(float x, float y);
 void		*safe_malloc(size_t bytes);
 void		*safe_malloc2(size_t bytes, t_list **allocs);
