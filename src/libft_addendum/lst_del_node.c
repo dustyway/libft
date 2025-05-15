@@ -12,7 +12,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	lst_del_node(t_list **lst, void *key)
+void	lst_del_node(t_list **lst, void *key, void (*del)(void *))
 {
 	t_list	*temp;
 	t_list	*prev;
@@ -21,7 +21,7 @@ void	lst_del_node(t_list **lst, void *key)
 	if (temp != NULL && temp->content == key)
 	{
 		*lst = temp->next;
-		ft_lstdelone(temp, free);
+		ft_lstdelone(temp, del);
 		return ;
 	}
 	while (temp != NULL && temp->content != key)
@@ -32,5 +32,5 @@ void	lst_del_node(t_list **lst, void *key)
 	if (temp == NULL)
 		return ;
 	prev->next = temp->next;
-	ft_lstdelone(temp, free);
+	ft_lstdelone(temp, del);
 }
