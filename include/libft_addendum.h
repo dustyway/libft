@@ -18,7 +18,8 @@
 
 uint32_t	atohex(const char *nptr);
 size_t		count_words(char const *s, char c);
-void		error_exit(char *msg);
+void error_exit(char *msg);
+void free_tab(char **tab);
 void		lst_del_node(t_list **lst, void *key);
 float		maxf(float x, float y);
 void		*safe_malloc(size_t bytes);
@@ -26,4 +27,5 @@ void		*safe_malloc2(size_t bytes, t_list **allocs);
 void		safe_write(int fd, const void *buf, size_t count);
 char		*strip_nl(char *s);
 void		*lst_nth(t_list *lst, size_t n);
+t_list		*lst_drop(t_list *lst, size_t n);
 #endif

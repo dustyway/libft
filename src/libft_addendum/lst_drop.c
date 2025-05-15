@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   lst_drop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschneid <pschneid@student.42berl...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 10:38:27 by pschneid          #+#    #+#             */
-/*   Updated: 2024/04/23 15:41:40 by pschneid         ###   ########.fr       */
+/*   Created: 2025/03/20 22:44:37 by pschneid          #+#    #+#             */
+/*   Updated: 2025/03/20 22:44:42 by pschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	_isspace(int c)
+/**
+ *
+ * @param lst a list
+ * @param n an index
+ * @return returns the list without the first n elements
+ * the memory is not freed
+ */
+t_list	*lst_drop(t_list *lst, size_t n)
 {
-	return (('\t' <= c && c <= '\r') || c == 32);
-}
-
-/* todo check for overflow */
-
-int	ft_atoi(const char *nptr)
-{
-	unsigned int	n;
-	int				sign;
-
-	n = 0;
-	sign = 1;
-	while (_isspace(*nptr))
-		nptr++;
-	if (*nptr == '+')
-		nptr++;
-	else if (*nptr == '-')
+	if (!lst)
+		return (NULL);
+	while (n > 0)
 	{
-		sign = -1;
-		nptr++;
+		lst = lst->next;
+		if (!lst)
+			return (NULL);
+		n--;
 	}
-	while (ft_isdigit(*nptr))
-	{
-		n = 10 * n + *nptr++ - '0';
-	}
-	return ((int)(sign * n));
+	return (lst);
 }
